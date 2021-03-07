@@ -1,0 +1,93 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <style>
+        .ana-div {
+            padding-left: 80px;
+            padding-right: 20px;
+        }
+        .div {
+            float: left;
+            display: inline-block;
+            height: 200px;
+            width: 300px;
+            margin: 10px;
+            color: #FFF;
+        }
+        body {
+            background-color: whitesmoke;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+    </style>
+</head>
+<body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
+
+            <div class="mx-auto my-0 order-0 order-md-1 position-relative">
+                <a class="mx-auto" href="#">
+                    <img src="https://cdn4.iconfinder.com/data/icons/avatars-21/512/avatar-circle-human-male-black-7-512.png" width="150px" height="150px" class="rounded-circle">
+                </a>
+            </div>
+        </nav>
+    @ViewData["bayi id"]
+    <br />
+        <div class="ana-div">
+                <div class=" div">
+                    <div class="card" style="width: 18rem; color:black; border-bottom-left-radius: 25px; border-bottom-right-radius: 25px; border-top-left-radius:25px; border-top-right-radius:25px;">
+                        <img class="card-img-top" style="padding: 20px;" src="https://previews.123rf.com/images/redlinevector/redlinevector1509/redlinevector150900262/44421659-icon-of-loaded-fork-lift-truck.jpg" alt="Card image cap">
+                            <div class="card-body">
+                             <h5 class="card-title">Liftler</h5>
+                                 <p class="card-text">Liftler üzerinde işlemler yapmak için butona tıklayınız</p>
+                                 <a href="/yoneticiliftler/Index" class="btn btn-info">Lift İşlem</a>
+                            </div>
+                    </div>
+                </div>
+            <div class=" div">
+                <div class="card" style=" width:18rem; color:black; border-bottom-left-radius: 25px; border-bottom-right-radius: 25px; border-top-left-radius:25px; border-top-right-radius:25px;">
+                    <img class="card-img-top" style="padding: 20px;" src="https://previews.123rf.com/images/robuart/robuart1601/robuart160100363/51593901-store-icon-shop-icon-flat-design-shop-or-market-cartoon-shop-market-store-or-cafe-shop-store-isolate.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Bayiler</h5>
+                            <p class="card-text">Bayiler üzerinde işlemler yapmak için butona tıklayınız</p>
+                            <a href="/yoneticibayiler/Index" class="btn btn-info">Bayi İşlem</a>
+                        </div>
+               </div>
+            </div>
+            <div class=" div">
+                <div class="card" style="width: 18rem;color: black; border-bottom-left-radius: 25px; border-bottom-right-radius: 25px; border-top-left-radius:25px; border-top-right-radius:25px;">
+                    <img class="card-img-top" style="padding: 20px;" src="https://png.pngtree.com/png-clipart/20201208/original/pngtree-hand-drawn-blue-truck-delivery-elements-png-image_5564377.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Siparişler</h5>
+                            <p class="card-text">Siparişler üzerinde işlemler yapmak için butona tıklayınız</p>
+                            <a href="/yoneticisiparisler/Index" class="btn btn-info">Sipariş İşlem</a>
+                        </div>
+                </div>
+            </div>
+            <div class=" div">
+                <div class="card" style="width: 18rem;color: black; border-bottom-left-radius: 25px; border-bottom-right-radius: 25px; border-top-left-radius:25px; border-top-right-radius:25px;">
+                    <img class="card-img-top" style="padding: 20px;" src="https://img2.pngio.com/car-garage-doors-clip-art-cartoon-car-in-garage-png-download-cartoon-garage-png-975_975.png" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Depo</h5>
+                            <p class="card-text">Depo üzerinde işlemler yapmak için butona tıklayınız</p>
+                            <a href="/yoneticidepo/Index" class="btn btn-info">Depo İşlem</a>
+                        </div>
+                </div>
+           </div>
+        </div>
+</body>
+</html>

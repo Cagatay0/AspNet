@@ -1,0 +1,106 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<title>Sepet</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <style>
+        .w3-container {
+            width: 1000px;
+            height: 300px;
+        }
+        .w3-panel w3-card w3-white {
+            width: 900px;
+            margin: auto;
+        }
+        .sola-kaydir {
+            float: left;
+            padding: 0 0 0 0;
+        }
+        .paragraf_d {
+            padding-top: 50px;
+            padding-right: 30px;
+            padding-bottom: 50px;
+            padding-left: 80px;
+        }
+        body {
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            background-color: whitesmoke;
+        }
+    </style>
+    <script type="text/javascript">
+        function MyFunction() {
+            alert('Message');
+            return;
+        }
+    </script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <a class="navbar-brand" href="#">Lift Sepeti</a>
+        <ul class=" navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="/bayianasayfa/Index?bayiid=@ViewBag.bayiid">Ana Sayfa</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/bayisepet/getIndex?bayiid=@ViewBag.bayiid">Sepet</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/bayianasayfa/bayisiparisler?bayiid=@ViewBag.bayiid">Siparişlerim</a>
+            </li>
+            <div>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle 	" href="#" id="navbardrop" data-toggle="dropdown">
+                        Satışlarım
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="/Musteri/Goruntule?bayiid=@ViewBag.bayiid">Satış yap</a>
+                        <a class="dropdown-item" href="/bayimagaza/satislar?bayiid=@ViewBag.bayiid">Satışlarım</a>
+                    </div>
+                </li>
+            </div>
+            <div>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle 	" href="#" id="navbardrop" data-toggle="dropdown">
+                        Mağazam
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="/bayimagaza/Index?bayiid=@ViewBag.bayiid">Ürünlerim</a>
+                        <a class="dropdown-item" href="/bayimagaza/UrunEkle?bayiid=@ViewBag.bayiid">Ürün Ekle</a>
+                        <a class="dropdown-item" href="/bayimagaza/bakim?bayiid=@ViewBag.bayiid">Bakıma Al</a>
+                    </div>
+                </li>
+            </div>
+            <div>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle 	" href="#" id="navbardrop" data-toggle="dropdown">
+                        @ViewBag.bayiad
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="/login/LogOut">Oturumu Kapat</a>
+                    </div>
+                </li>
+            </div>
+        </ul>
+    </nav>
+    <br />
+    <br />
+    <br />
+    <div><h1 style="text-align:center">SEPETİNİZDE ÜRÜN YOKTUR</h1></div>
+</body>
+</html>

@@ -1,0 +1,102 @@
+﻿@model IEnumerable<LiftSepeti.Models.Entity.liftTable>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Liftler</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link href="~/CSS/table.css" rel="stylesheet" />
+    <style>
+        .ana-div {
+            padding-left: 300px;
+            padding-right: 20px;
+        }
+        .div {
+            float: left;
+            display: inline-block;
+            height: 400px;
+            width: 300px;
+            margin: 100px;
+            color: #000;
+        }
+        body {
+            background-color: whitesmoke;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+    </style>
+</head>
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark ">
+    <a class="navbar-brand" href="#">Lift Sepeti</a>
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <a class="nav-link" href="/yoneticianasayfa">Ana Sayfa</a>
+        </li>
+        <div>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle 	" href="/yoneticiliftler/Index" id="navbardrop" data-toggle="dropdown">
+                    Liftler
+                </a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="/yoneticiliftler/Index">Liftleri Görüntüle</a>
+                    <a class="dropdown-item" href="/yoneticiliftler/Create">Lift Modeli Ekle</a>
+                </div>
+
+            </li>
+        </div>
+        <li class="nav-item">
+            <a class="nav-link" href="/yoneticibayiler/Index">Bayiler</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/yoneticisiparisler/Index">Siparişler</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/yoneticidepo/Index">Depo</a>
+        </li>
+        <div>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle 	" href="#" id="navbardrop" data-toggle="dropdown">
+                    Yönetici
+                </a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="/login/LogOut">Oturumu Kapat</a>
+                </div>
+            </li>
+        </div>
+    </ul>
+</nav>
+<body>
+    @foreach (var item in Model)
+    {
+        <div class="ana-div">
+            <div class=" div">
+                <div class="card" style="width:18rem; border-bottom-left-radius: 25px; border-bottom-right-radius: 25px; border-color: slategray">
+                    <img class="card-img-top" src=@Html.DisplayFor(modelItem => item.resim) alt="Card image" style= width="600px" height="300px" color: black>
+                    <div class="card-body">
+                        <h4 class="card-title">@Html.DisplayFor(modelItem => item.modelTable.ad)</h4>
+                        <p class="card-text">
+                            Adet: @Html.DisplayFor(modelItem => item.adet)<br>
+                            Fiyat: @Html.DisplayFor(modelItem => item.fiyat)<br>
+                            Bakım Periyodu: @Html.DisplayFor(modelItem => item.bakimperiyot)
+                        </p>
+                        <a href="/yoneticiliftler/Edit/@item.id" class="btn btn-warning">Düzenle</a>
+                        <a href="/yoneticiliftler/Sil/@item.id" class="btn btn-danger">Sil</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</body>
+</html>

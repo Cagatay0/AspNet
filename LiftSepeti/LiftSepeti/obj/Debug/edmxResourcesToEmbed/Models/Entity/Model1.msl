@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="LiftSepetiModelStoreContainer" CdmEntityContainer="LiftSepetiEntities4">
+    <EntitySetMapping Name="bayisatisTable">
+      <EntityTypeMapping TypeName="LiftSepetiModel.bayisatisTable">
+        <MappingFragment StoreEntitySet="bayisatisTable">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="bayiid" ColumnName="bayiid" />
+          <ScalarProperty Name="musteriid" ColumnName="musteriid" />
+          <ScalarProperty Name="bayiurunleriid" ColumnName="bayiurunleriid" />
+          <ScalarProperty Name="tarih" ColumnName="tarih" />
+          <ScalarProperty Name="kar" ColumnName="kar" />
+          <ScalarProperty Name="satisadet" ColumnName="satisadet" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="bayiTable">
+      <EntityTypeMapping TypeName="LiftSepetiModel.bayiTable">
+        <MappingFragment StoreEntitySet="bayiTable">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="ulke" ColumnName="ulke" />
+          <ScalarProperty Name="sehir" ColumnName="sehir" />
+          <ScalarProperty Name="bayiad" ColumnName="bayiad" />
+          <ScalarProperty Name="sifre" ColumnName="sifre" />
+          <ScalarProperty Name="adres" ColumnName="adres" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="bayiurunlerTable">
+      <EntityTypeMapping TypeName="LiftSepetiModel.bayiurunlerTable">
+        <MappingFragment StoreEntitySet="bayiurunlerTable">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="bayiid" ColumnName="bayiid" />
+          <ScalarProperty Name="liftid" ColumnName="liftid" />
+          <ScalarProperty Name="stok" ColumnName="stok" />
+          <ScalarProperty Name="fiyat" ColumnName="fiyat" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="depoTable">
+      <EntityTypeMapping TypeName="LiftSepetiModel.depoTable">
+        <MappingFragment StoreEntitySet="depoTable">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="ad" ColumnName="ad" />
+          <ScalarProperty Name="stok" ColumnName="stok" />
+          <ScalarProperty Name="teminsuresi" ColumnName="teminsuresi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="durumTable">
+      <EntityTypeMapping TypeName="LiftSepetiModel.durumTable">
+        <MappingFragment StoreEntitySet="durumTable">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="durum" ColumnName="durum" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="liftTable">
+      <EntityTypeMapping TypeName="LiftSepetiModel.liftTable">
+        <MappingFragment StoreEntitySet="liftTable">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="modelid" ColumnName="modelid" />
+          <ScalarProperty Name="adet" ColumnName="adet" />
+          <ScalarProperty Name="fiyat" ColumnName="fiyat" />
+          <ScalarProperty Name="bakimperiyot" ColumnName="bakimperiyot" />
+          <ScalarProperty Name="resim" ColumnName="resim" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="modelTable">
+      <EntityTypeMapping TypeName="LiftSepetiModel.modelTable">
+        <MappingFragment StoreEntitySet="modelTable">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="ad" ColumnName="ad" />
+          <ScalarProperty Name="ebat" ColumnName="ebat" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="musteriTable">
+      <EntityTypeMapping TypeName="LiftSepetiModel.musteriTable">
+        <MappingFragment StoreEntitySet="musteriTable">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="ad" ColumnName="ad" />
+          <ScalarProperty Name="soyad" ColumnName="soyad" />
+          <ScalarProperty Name="telefon" ColumnName="telefon" />
+          <ScalarProperty Name="adres" ColumnName="adres" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="odemeyontemiTable">
+      <EntityTypeMapping TypeName="LiftSepetiModel.odemeyontemiTable">
+        <MappingFragment StoreEntitySet="odemeyontemiTable">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="tip" ColumnName="tip" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="receteTable">
+      <EntityTypeMapping TypeName="LiftSepetiModel.receteTable">
+        <MappingFragment StoreEntitySet="receteTable">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="modelid" ColumnName="modelid" />
+          <ScalarProperty Name="depoid" ColumnName="depoid" />
+          <ScalarProperty Name="kullanimmiktari" ColumnName="kullanimmiktari" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="siparisTable">
+      <EntityTypeMapping TypeName="LiftSepetiModel.siparisTable">
+        <MappingFragment StoreEntitySet="siparisTable">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="bayiid" ColumnName="bayiid" />
+          <ScalarProperty Name="liftid" ColumnName="liftid" />
+          <ScalarProperty Name="durumid" ColumnName="durumid" />
+          <ScalarProperty Name="tarih" ColumnName="tarih" />
+          <ScalarProperty Name="adet" ColumnName="adet" />
+          <ScalarProperty Name="odemeyontemiid" ColumnName="odemeyontemiid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="LiftSepetiModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="yoneticiTable">
+      <EntityTypeMapping TypeName="LiftSepetiModel.yoneticiTable">
+        <MappingFragment StoreEntitySet="yoneticiTable">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="ad" ColumnName="ad" />
+          <ScalarProperty Name="soyad" ColumnName="soyad" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="sifre" ColumnName="sifre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

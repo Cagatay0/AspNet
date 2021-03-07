@@ -1,0 +1,86 @@
+﻿@using LiftSepeti.Models.Entity
+@model IEnumerable<LiftSepeti.Models.Entity.bayiurunlerTable>
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+
+<html>
+<title>Ana Sayfa</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+        div.w3-container {
+            width: 1200px;
+            height: 450px;
+        }
+        .w3-panel w3-card w3-white {
+            width: 900px;
+            margin: auto;
+        }
+        .sola-kaydir {
+            float: left;
+            padding: 0 0 10px 10px;
+        }
+        .paragraf_d {
+            padding-top: 50px;
+            padding-right: 30px;
+            padding-bottom: 50px;
+            padding-left: 80px;
+        }
+        body {
+            background-image: url('https://cutewallpaper.org/21/truck-wallpaper-hd/Volvo-Truck-Wallpaper-67+-Group-Wallpapers.jpg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">Lift Sepeti</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <ul class="nav navbar-nav">
+                    <li><a href="/musteriAPI/Index?musteriid=@ViewBag.musteriid">Siparişlerim</a></li>
+                </ul>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#"><span class="	glyphicon glyphicon-user"></span> @ViewBag.musteriid</a></li>
+            </ul>
+        </div>
+    </nav>
+    <br />
+    <br />
+    <br />
+    <br />
+    @foreach (var mdl in Model)
+    {
+        <div class="w3-container">
+            <div class="w3-panel w3-card w3-white">
+                <img src="@mdl.liftTable.resim" alt="Card image cap" width="900px" height="350px" class="sola-kaydir">
+                <br />
+                <div class="paragraf_d">
+                    <p>Model Türü : @mdl.liftTable.modelTable.ad</p>
+                    <p>Model Ebatı : @mdl.liftTable.modelTable.ebat</p>
+                    <p>Stok Adedi : @mdl.stok</p>
+                    <p>Lift Fiyatı : @mdl.fiyat TL</p>
+                    <p>Bakım Periyodu : @mdl.liftTable.bakimperiyot ay </p>
+                    <a href="/urunrecete/Index/@mdl.liftTable.modelTable.id" class="btn btn-info">Ürün Detay</a>
+                    <a href="/musteriAPI/SiparisEkle?musteriid=@ViewBag.musteriid&bayiid=@mdl.bayiid&liftid=@mdl.liftTable.id&modelid=@mdl.liftTable.modelid&resim=@mdl.liftTable.resim&bayiad=@mdl.bayiTable.bayiad&liftad=@mdl.liftTable.modelTable.ad&fiyat=@mdl.fiyat&bakimperiyot=@mdl.liftTable.bakimperiyot"
+                       class="btn btn-success">Sipariş Ver</a>
+                </div>
+            </div>
+        </div>
+    }
+</body>
+</html>

@@ -1,0 +1,61 @@
+﻿@model LiftSepeti.Models.Entity.depoTable
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Depo Malzeme Silme</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <h3>Depodaki malzemeyi silmek istiyor musun ?</h3>
+    <div>
+        <h4>Depo Malzeme Silme</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.ad)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.ad)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.stok)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.stok)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.teminsuresi)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.teminsuresi)
+            </dd>
+    
+        </dl>
+    
+        @using (Html.BeginForm()) {
+            @Html.AntiForgeryToken()
+    
+            <div class="form-actions no-color">
+                <input type="submit" value="Sil" class="btn btn-danger" /> |
+                <a href="/yoneticidepo/Index" class="btn btn-info">Listeye Geri Dön</a>
+            </div>
+        }
+    </div>
+</body>
+</html>

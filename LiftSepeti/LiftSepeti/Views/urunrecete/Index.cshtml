@@ -1,0 +1,63 @@
+﻿@model IEnumerable<LiftSepeti.Models.Entity.receteTable>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link href="~/CSS/recete.css" rel="stylesheet" />
+    <style>
+
+    </style>
+</head>
+<body >
+    <div>
+        <div class="demo">
+            <div class="container">
+                <div class="row text-center">
+                    <h1 class="heading-title">Ürün Reçetesi</h1>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 col-sm-6"></div>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="pricingTable">
+                            <div class="pricingTable-header">
+                                <span class="heading">
+                                    <img src="@ViewBag.resim" width="350px" height="250px" />
+                                </span>
+                            </div>
+                            <div class="pricing-plans">
+                            </div>
+                            <div class="pricingContent">
+                                <ul>
+                                    <li><b>Model</b> @ViewBag.ad</li>
+                                    <li><b>Model Ebat</b> @ViewBag.ebat</li>
+                                    <li><b>Temin Süresi</b> @ViewBag.teminsuresi ay</li>
+                                    <li><b>Stok</b> @ViewBag.adet adet</li>
+                                    @foreach (var item in Model)
+                                    {
+                                        if (item.modelid == ViewBag.modelid)
+                                        {
+                                            <li><b>@item.depoTable.ad </b> @item.kullanimmiktari Ton</li>
+                                        }
+                                    }
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-6"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

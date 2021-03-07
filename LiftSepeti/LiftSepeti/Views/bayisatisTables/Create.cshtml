@@ -1,0 +1,116 @@
+﻿@model LiftSepeti.Models.Entity.bayisatisTable
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Create</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark ">
+        <a class="navbar-brand" href="#">Lift Sepeti</a>
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="/bayianasayfa/Index?bayiid=@ViewBag.bayibilgiler.id">Ana Sayfa</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/bayisepet/getIndex?bayiid=@ViewBag.bayibilgiler.id">Sepet</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/bayianasayfa/bayisiparisler?bayiid=@ViewBag.bayibilgiler.id">Siparişlerim</a>
+            </li>
+            <div>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle 	" href="#" id="navbardrop" data-toggle="dropdown">
+                        Satışlarım
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="/bayisatisTables/Index?bayiid=@ViewBag.bayiid">Satış yap</a>
+                        <a class="dropdown-item" href="/bayimagaza/satislar?bayiid=@ViewBag.bayiid">Satışlarım</a>
+                    </div>
+                </li>
+            </div>
+            <div>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle 	" href="#" id="navbardrop" data-toggle="dropdown">
+                        Mağazam
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="/bayimagaza/Index?bayiid=@ViewBag.bayibilgiler.id">Ürünlerim</a>
+                        <a class="dropdown-item" href="/bayimagaza/UrunEkle?bayiid=@ViewBag.bayiid">Ürün Ekle</a>
+                        <a class="dropdown-item" href="/bayimagaza/bakim?bayiid=@ViewBag.bayiid">Bakıma Al</a>
+                    </div>
+                </li>
+            </div>
+            <div>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle 	" href="#" id="navbardrop" data-toggle="dropdown">
+                        @ViewBag.bayibilgiler.bayiad
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="/login/LogOut">Oturumu Kapat</a>
+                    </div>
+                </li>
+            </div>
+        </ul>
+    </nav>
+    @{
+        int musteriid = 0, bayiid, liftid = 0, modelid = 0, bakimperiyot = 0;
+        string resim = "", bayiad, liftad = "";
+        double fiyat;
+        bayiid = ViewBag.bayiid;
+        bayiad = ViewBag.bayiad;
+    }
+    <form method="post" action="@Url.Action("SiparisEkle", "musteriAPI", new { bayiid = bayiid, modelid = modelid, bakimperiyot = bakimperiyot, resim = resim,bayiad=bayiad,liftad=liftad})">
+        <div class="form-horizontal" style="padding-left:400px; padding-right: 400px;>
+            <h2 style="margin-left:700px"></h2>
+            <br>
+            <div class="form-group" "  >
+                <label class="control-label col-md-2"><h5>Müşteriler</h5></label>
+                <div class="col-md-10">
+                    <select class="form-control" name="musteriid">
+                        @foreach (var i in ViewBag.musteriler)
+                        {
+                            <h4>AD:</h4>
+                            @i.id
+                            <option>@i.ad</option>
+                        }
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-2"><h5>Ürünler</h5></label>
+                <div class="col-md-10">
+                    <select class="form-control" name="liftid">
+                        @foreach (var i in ViewBag.isimler)
+                        {
+                            <option>@i.id</option>
+                        }
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-10">
+                    <label for="usr"><h5>Fiyat</h5></label>
+                    <input type="number" class="form-control" id="fiyat" name="fiyat">
+                </div>
+            </div>
+            <div class="form-group" style="margin-left:400px">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Satış İşlemini Tamamla" class="btn btn-success" />
+                </div>
+            </div>
+        </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,74 @@
+﻿@model LiftSepeti.Models.Entity.siparisTable
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <h4>siparisTable</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.tarih)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.tarih)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.adet)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.adet)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.bayiTable.ulke)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.bayiTable.ulke)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.durumTable.durum)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.durumTable.durum)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.liftTable.resim)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.liftTable.resim)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.odemeyontemiTable.tip)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.odemeyontemiTable.tip)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>

@@ -1,0 +1,74 @@
+﻿@model LiftSepeti.Models.Entity.bayisatisTable
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <h4>bayisatisTable</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.tarih)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.tarih)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.kar)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.kar)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.satisadet)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.satisadet)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.bayiTable.ulke)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.bayiTable.ulke)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.bayiurunlerTable.id)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.bayiurunlerTable.id)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.musteriTable.ad)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.musteriTable.ad)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>

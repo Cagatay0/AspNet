@@ -1,0 +1,64 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>satisYok</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <a class="navbar-brand" href="#">Lift Sepeti</a>
+        <ul class=" navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="/bayianasayfa/Index?bayiid=@ViewBag.bayiid">Ana Sayfa</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/bayisepet/getIndex?bayiid=@ViewBag.bayiid">Sepet</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/bayianasayfa/bayisiparisler?bayiid=@ViewBag.bayiid">Siparişlerim</a>
+            </li>
+            <div>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle 	" href="#" id="navbardrop" data-toggle="dropdown">
+                        Satışlarım
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="/Musteri/Goruntule?bayiid=@ViewBag.bayiid">Satış yap</a>
+                        <a class="dropdown-item" href="/bayimagaza/satislar?bayiid=@ViewBag.bayiid">Satışlarım</a>
+                    </div>
+                </li>
+            </div>
+            <div>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle 	" href="#" id="navbardrop" data-toggle="dropdown">
+                        Mağazam
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="/bayimagaza/Index?bayiid=@ViewBag.bayibilgiler.id">Ürünlerim</a>
+                        <a class="dropdown-item" href="/bayimagaza/UrunEkle?bayiid=@ViewBag.bayiid">Ürün Ekle</a>
+                        <a class="dropdown-item" href="/bayimagaza/bakim?bayiid=@ViewBag.bayiid">Bakıma Al</a>
+                    </div>
+                </li>
+            </div>
+            <div>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle 	" href="#" id="navbardrop" data-toggle="dropdown">
+                        @ViewBag.bayibilgiler.bayiad
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="/login/LogOut">Oturumu Kapat</a>
+                    </div>
+                </li>
+            </div>
+        </ul>
+    </nav>
+    <div>
+    </div>
+</body>
+</html>

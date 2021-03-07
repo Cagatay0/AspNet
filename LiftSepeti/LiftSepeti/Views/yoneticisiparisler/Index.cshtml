@@ -1,0 +1,118 @@
+﻿@model IEnumerable<LiftSepeti.Models.Entity.siparisTable>
+    
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Siparişler</title>
+    <link href="~/CSS/table.css" rel="stylesheet" /
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <style>
+        body {
+            background-color: whitesmoke;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+    </style>
+</head>
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark ">
+    <a class="navbar-brand" href="#">Lift Sepeti</a>
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <a class="nav-link" href="/yoneticianasayfa">Ana Sayfa</a>
+        </li>
+        <div>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle 	" href="/yoneticiliftler/Index" id="navbardrop" data-toggle="dropdown">
+                    Liftler
+                </a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="/yoneticiliftler/Index">Liftleri Görüntüle</a>
+                    <a class="dropdown-item" href="/yoneticiliftler/Create">Lift Modeli Ekle</a>
+                </div>
+            </li>
+        </div>
+        <li class="nav-item">
+            <a class="nav-link" href="/yoneticibayiler/Index">Bayiler</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/yoneticisiparisler/Index">Siparişler</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/yoneticidepo/Index">Depo</a>
+        </li>
+        <div>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle 	" href="#" id="navbardrop" data-toggle="dropdown">
+                    Yönetici
+                </a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="/login/LogOut">Oturumu Kapat</a>
+                </div>
+            </li>
+        </div>
+    </ul>
+</nav>
+<body>
+        <div class="container">
+            <br />
+            <br />
+            <form runat="server">
+        <div style="float:right">
+            <label>Bayi Adı: </label>
+            <td>@Html.TextBox("ara")</td>
+
+            <button  class="btn btn-success">Ara</button>
+        </div>
+            <br />
+            <br />
+       
+            <table class="table table-dark table-striped">
+                <thead>
+                    <tr>
+                        <th>Sıra</th>
+                        <th>Sipariş Kodu </th>
+                        <th>Bayi Adı</th>
+                        <th>Lift Adı</th>
+                        <th>Durumu</th>
+                        <th>Alınan miktar</th>
+                        <th>Ödeme Yöntemi</th>
+                        <th>Tarih</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @{int sira = 1; }
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@sira</td>
+                            @{ sira++;}
+                            <td> @Html.DisplayFor(modelItem => item.id)</td>
+                            <td> @Html.DisplayFor(modelItem => item.bayiTable.bayiad)</td>
+                            <td> @Html.DisplayFor(modelItem => item.liftTable.modelTable.ad)</td>
+                            <td> @Html.DisplayFor(modelItem => item.durumTable.durum) verildi</td>
+                            <td> @Html.DisplayFor(modelItem => item.adet)</td>
+                            <td> @Html.DisplayFor(modelItem => item.odemeyontemiTable.tip)</td>
+                            <td> @Html.DisplayFor(modelItem => item.tarih)</td>
+                            <td><a href="/yoneticisiparisler/Edit/@item.id" class="btn btn-warning">Düzenle</a></td>
+                            <td><a href="/yoneticisiparisler/Sil/@item.id" class="btn btn-danger">Sil</a></td>
+                        </tr>
+                    }
+                </tbody>
+                </table>
+            </div>
+</body>
+</html>

@@ -1,0 +1,78 @@
+﻿@model LiftSepeti.Models.Entity.liftTable
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Lift Sil</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <h3>Are you sure you want to delete this?</h3>
+    <div>
+        <h4>Lift Silme</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.adet)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.adet)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.fiyat)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.fiyat)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.bakimperiyot)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.bakimperiyot)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.resim)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.resim)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.modelTable.ad)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.modelTable.ad)
+            </dd>
+    
+        </dl>
+    
+        @using (Html.BeginForm()) {
+            @Html.AntiForgeryToken()
+    
+            <div class="form-actions no-color">
+                <input type="submit" value="Sil" class="btn btn-danger" /> |
+                
+                <a href="/yoneticiliftler/Index" class="btn btn-info">Listeye Geri Dön</a>
+            </div>
+        }
+    </div>
+</body>
+</html>

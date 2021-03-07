@@ -1,0 +1,90 @@
+﻿@model LiftSepeti.Models.Entity.siparisTable
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Sipariş Detayı</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+        h4 {
+            text-align: center;
+        }
+        body {
+            background-color: lightblue;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h4>Sipariş Detayı</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.tarih)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.tarih)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.adet)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.adet)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.bayiTable.ulke)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.bayiTable.ulke)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.durumTable.durum)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.durumTable.durum)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.liftTable.resim)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.liftTable.resim)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.odemeyontemiTable.tip)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.odemeyontemiTable.tip)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        <a href="/yoneticisiparisler/Edit/@Model.id" class="btn btn-warning">Düzenle</a>|
+        <a href="/yoneticisiparisler/Index" class="btn btn-info">Listeye Geri Dön</a>
+    </p>
+</body>
+</html>

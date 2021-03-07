@@ -1,0 +1,94 @@
+﻿@using LiftSepeti.Models.Entity
+@model IEnumerable<LiftSepeti.Models.Entity.liftTable>
+
+@{
+    ViewBag.Title = "Index";
+}
+<html>
+<title>Ana Sayfa</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+        .a {
+            padding-left: 0px;
+        }
+        div.w3-container {
+            width: 1250px;
+            height: 450px;
+        }
+        .w3-panel w3-card w3-white {
+            width: 900px;
+            margin: auto;
+        }
+        .sola-kaydir {
+            float: left;
+            padding: 0 0 0 0;
+        }
+        .paragraf_d {
+            padding-top: 50px;
+            padding-right: 30px;
+            padding-bottom: 50px;
+            padding-left: 80px;
+        }
+        body {
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            background-color: whitesmoke;
+        }
+    </style>
+</head>
+<nav class="navbar navbar-expand-sm bg-dark navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">
+                <img src="https://media.discordapp.net/attachments/771476524489506823/793852742547537930/2.png?width=1424&height=669" alt="Logo" style="width:100px;">
+            </a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li><a href="/Home/Index">AnaSayfa</a></li>
+            <li><a href="/Home/About">Hakkımızda</a></li>
+            <li><a href="/Home/Contact">İletişim</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="/login/Index"><span class="glyphicon glyphicon-log-in"></span> Giriş</a></li>
+        </ul>
+    </div>
+</nav>
+<body>
+    <br />
+    <br />
+    <br />
+    <center>
+        @foreach (var lft in Model)
+        {
+            <div class="w3-container">
+                <div class="a">
+                    <div class="w3-panel w3-card w3-white" style="  border-bottom-right-radius: 25px; border-top-right-radius: 25px; border-bottom-left-radius:25px; border-top-left-radius:25px; ">
+                        <img src="@lft.resim" alt="Card image cap" width="900px" height="350px" class="sola-kaydir" style="padding: 20px;">
+                        <br />
+                        <div class="paragraf_d" style="white-space: nowrap; text-overflow: ellipsis; width: 200px; overflow: visible; ">
+                            <h4><p><b>Model Türü :</b> @lft.modelTable.ad</p></h4>
+                            <h4> <p><b>Model Ebatı : </b>@lft.modelTable.ebat</p></h4>
+                            <h4><p><b>Stok Adedi : </b>@lft.adet</p></h4>
+                            <h4><p><b>Lift Fiyatı :</b> @lft.fiyat</p></h4>
+                            <h4><p><b>Bakım Periyodu :</b> @lft.bakimperiyot ay </p></h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </center>
+</body>
+</html>
+
+
+
+

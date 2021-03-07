@@ -1,0 +1,871 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="LiftSepetiModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="bayisatisTable">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="bayiid" Type="int" Nullable="false" />
+          <Property Name="musteriid" Type="int" Nullable="false" />
+          <Property Name="bayiurunleriid" Type="int" Nullable="false" />
+          <Property Name="tarih" Type="date" Nullable="false" />
+          <Property Name="kar" Type="float" Nullable="false" />
+          <Property Name="satisadet" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="bayiTable">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ulke" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="sehir" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="bayiad" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="sifre" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="adres" Type="varchar" MaxLength="250" Nullable="false" />
+        </EntityType>
+        <EntityType Name="bayiurunlerTable">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="bayiid" Type="int" Nullable="false" />
+          <Property Name="liftid" Type="int" Nullable="false" />
+          <Property Name="stok" Type="int" Nullable="false" />
+          <Property Name="fiyat" Type="float" Nullable="false" />
+        </EntityType>
+        <EntityType Name="depoTable">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ad" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="stok" Type="int" Nullable="false" />
+          <Property Name="teminsuresi" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="durumTable">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="durum" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="liftTable">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="modelid" Type="int" Nullable="false" />
+          <Property Name="adet" Type="int" Nullable="false" />
+          <Property Name="fiyat" Type="float" Nullable="false" />
+          <Property Name="bakimperiyot" Type="int" Nullable="false" />
+          <Property Name="resim" Type="varchar" MaxLength="200" Nullable="false" />
+        </EntityType>
+        <EntityType Name="modelTable">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ad" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ebat" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="musteriTable">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ad" Type="varchar" MaxLength="50" />
+          <Property Name="soyad" Type="varchar" MaxLength="50" />
+          <Property Name="telefon" Type="varchar" MaxLength="50" />
+          <Property Name="adres" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="odemeyontemiTable">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="tip" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="receteTable">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="modelid" Type="int" Nullable="false" />
+          <Property Name="depoid" Type="int" Nullable="false" />
+          <Property Name="kullanimmiktari" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="siparisTable">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="bayiid" Type="int" Nullable="false" />
+          <Property Name="liftid" Type="int" Nullable="false" />
+          <Property Name="durumid" Type="int" Nullable="false" />
+          <Property Name="tarih" Type="date" Nullable="false" />
+          <Property Name="adet" Type="float" Nullable="false" />
+          <Property Name="odemeyontemiid" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="yoneticiTable">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ad" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="soyad" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="email" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="sifre" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_bayisatisTable_bayiTable">
+          <End Role="bayiTable" Type="Self.bayiTable" Multiplicity="1" />
+          <End Role="bayisatisTable" Type="Self.bayisatisTable" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="bayiTable">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="bayisatisTable">
+              <PropertyRef Name="bayiid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_bayisatisTable_bayiurunlerTable">
+          <End Role="bayiurunlerTable" Type="Self.bayiurunlerTable" Multiplicity="1" />
+          <End Role="bayisatisTable" Type="Self.bayisatisTable" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="bayiurunlerTable">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="bayisatisTable">
+              <PropertyRef Name="bayiurunleriid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_bayisatisTable_musteriTable">
+          <End Role="musteriTable" Type="Self.musteriTable" Multiplicity="1" />
+          <End Role="bayisatisTable" Type="Self.bayisatisTable" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="musteriTable">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="bayisatisTable">
+              <PropertyRef Name="musteriid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_bayiurunlerTable_bayiTable">
+          <End Role="bayiTable" Type="Self.bayiTable" Multiplicity="1" />
+          <End Role="bayiurunlerTable" Type="Self.bayiurunlerTable" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="bayiTable">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="bayiurunlerTable">
+              <PropertyRef Name="bayiid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_bayiurunlerTable_liftTable">
+          <End Role="liftTable" Type="Self.liftTable" Multiplicity="1" />
+          <End Role="bayiurunlerTable" Type="Self.bayiurunlerTable" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="liftTable">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="bayiurunlerTable">
+              <PropertyRef Name="liftid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_liftTable_modelTable">
+          <End Role="modelTable" Type="Self.modelTable" Multiplicity="1" />
+          <End Role="liftTable" Type="Self.liftTable" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="modelTable">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="liftTable">
+              <PropertyRef Name="modelid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_receteTable_depoTable">
+          <End Role="depoTable" Type="Self.depoTable" Multiplicity="1" />
+          <End Role="receteTable" Type="Self.receteTable" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="depoTable">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="receteTable">
+              <PropertyRef Name="depoid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_receteTable_modelTable">
+          <End Role="modelTable" Type="Self.modelTable" Multiplicity="1" />
+          <End Role="receteTable" Type="Self.receteTable" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="modelTable">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="receteTable">
+              <PropertyRef Name="modelid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_siparisTable_bayiTable">
+          <End Role="bayiTable" Type="Self.bayiTable" Multiplicity="1" />
+          <End Role="siparisTable" Type="Self.siparisTable" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="bayiTable">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="siparisTable">
+              <PropertyRef Name="bayiid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_siparisTable_durumTable">
+          <End Role="durumTable" Type="Self.durumTable" Multiplicity="1" />
+          <End Role="siparisTable" Type="Self.siparisTable" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="durumTable">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="siparisTable">
+              <PropertyRef Name="durumid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_siparisTable_liftTable">
+          <End Role="liftTable" Type="Self.liftTable" Multiplicity="1" />
+          <End Role="siparisTable" Type="Self.siparisTable" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="liftTable">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="siparisTable">
+              <PropertyRef Name="liftid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_siparisTable_odemeyontemiTable">
+          <End Role="odemeyontemiTable" Type="Self.odemeyontemiTable" Multiplicity="1" />
+          <End Role="siparisTable" Type="Self.siparisTable" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="odemeyontemiTable">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="siparisTable">
+              <PropertyRef Name="odemeyontemiid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="LiftSepetiModelStoreContainer">
+          <EntitySet Name="bayisatisTable" EntityType="Self.bayisatisTable" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="bayiTable" EntityType="Self.bayiTable" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="bayiurunlerTable" EntityType="Self.bayiurunlerTable" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="depoTable" EntityType="Self.depoTable" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="durumTable" EntityType="Self.durumTable" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="liftTable" EntityType="Self.liftTable" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="modelTable" EntityType="Self.modelTable" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="musteriTable" EntityType="Self.musteriTable" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="odemeyontemiTable" EntityType="Self.odemeyontemiTable" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="receteTable" EntityType="Self.receteTable" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="siparisTable" EntityType="Self.siparisTable" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="yoneticiTable" EntityType="Self.yoneticiTable" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_bayisatisTable_bayiTable" Association="Self.FK_bayisatisTable_bayiTable">
+            <End Role="bayiTable" EntitySet="bayiTable" />
+            <End Role="bayisatisTable" EntitySet="bayisatisTable" />
+          </AssociationSet>
+          <AssociationSet Name="FK_bayisatisTable_bayiurunlerTable" Association="Self.FK_bayisatisTable_bayiurunlerTable">
+            <End Role="bayiurunlerTable" EntitySet="bayiurunlerTable" />
+            <End Role="bayisatisTable" EntitySet="bayisatisTable" />
+          </AssociationSet>
+          <AssociationSet Name="FK_bayisatisTable_musteriTable" Association="Self.FK_bayisatisTable_musteriTable">
+            <End Role="musteriTable" EntitySet="musteriTable" />
+            <End Role="bayisatisTable" EntitySet="bayisatisTable" />
+          </AssociationSet>
+          <AssociationSet Name="FK_bayiurunlerTable_bayiTable" Association="Self.FK_bayiurunlerTable_bayiTable">
+            <End Role="bayiTable" EntitySet="bayiTable" />
+            <End Role="bayiurunlerTable" EntitySet="bayiurunlerTable" />
+          </AssociationSet>
+          <AssociationSet Name="FK_bayiurunlerTable_liftTable" Association="Self.FK_bayiurunlerTable_liftTable">
+            <End Role="liftTable" EntitySet="liftTable" />
+            <End Role="bayiurunlerTable" EntitySet="bayiurunlerTable" />
+          </AssociationSet>
+          <AssociationSet Name="FK_liftTable_modelTable" Association="Self.FK_liftTable_modelTable">
+            <End Role="modelTable" EntitySet="modelTable" />
+            <End Role="liftTable" EntitySet="liftTable" />
+          </AssociationSet>
+          <AssociationSet Name="FK_receteTable_depoTable" Association="Self.FK_receteTable_depoTable">
+            <End Role="depoTable" EntitySet="depoTable" />
+            <End Role="receteTable" EntitySet="receteTable" />
+          </AssociationSet>
+          <AssociationSet Name="FK_receteTable_modelTable" Association="Self.FK_receteTable_modelTable">
+            <End Role="modelTable" EntitySet="modelTable" />
+            <End Role="receteTable" EntitySet="receteTable" />
+          </AssociationSet>
+          <AssociationSet Name="FK_siparisTable_bayiTable" Association="Self.FK_siparisTable_bayiTable">
+            <End Role="bayiTable" EntitySet="bayiTable" />
+            <End Role="siparisTable" EntitySet="siparisTable" />
+          </AssociationSet>
+          <AssociationSet Name="FK_siparisTable_durumTable" Association="Self.FK_siparisTable_durumTable">
+            <End Role="durumTable" EntitySet="durumTable" />
+            <End Role="siparisTable" EntitySet="siparisTable" />
+          </AssociationSet>
+          <AssociationSet Name="FK_siparisTable_liftTable" Association="Self.FK_siparisTable_liftTable">
+            <End Role="liftTable" EntitySet="liftTable" />
+            <End Role="siparisTable" EntitySet="siparisTable" />
+          </AssociationSet>
+          <AssociationSet Name="FK_siparisTable_odemeyontemiTable" Association="Self.FK_siparisTable_odemeyontemiTable">
+            <End Role="odemeyontemiTable" EntitySet="odemeyontemiTable" />
+            <End Role="siparisTable" EntitySet="siparisTable" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="LiftSepetiModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="bayisatisTable">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="bayiid" Type="Int32" Nullable="false" />
+          <Property Name="musteriid" Type="Int32" Nullable="false" />
+          <Property Name="bayiurunleriid" Type="Int32" Nullable="false" />
+          <Property Name="tarih" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="kar" Type="Double" Nullable="false" />
+          <Property Name="satisadet" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="bayiTable" Relationship="Self.FK_bayisatisTable_bayiTable" FromRole="bayisatisTable" ToRole="bayiTable" />
+          <NavigationProperty Name="bayiurunlerTable" Relationship="Self.FK_bayisatisTable_bayiurunlerTable" FromRole="bayisatisTable" ToRole="bayiurunlerTable" />
+          <NavigationProperty Name="musteriTable" Relationship="Self.FK_bayisatisTable_musteriTable" FromRole="bayisatisTable" ToRole="musteriTable" />
+        </EntityType>
+        <EntityType Name="bayiTable">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ulke" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="sehir" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="bayiad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="sifre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="adres" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="bayisatisTable" Relationship="Self.FK_bayisatisTable_bayiTable" FromRole="bayiTable" ToRole="bayisatisTable" />
+          <NavigationProperty Name="bayiurunlerTable" Relationship="Self.FK_bayiurunlerTable_bayiTable" FromRole="bayiTable" ToRole="bayiurunlerTable" />
+          <NavigationProperty Name="siparisTable" Relationship="Self.FK_siparisTable_bayiTable" FromRole="bayiTable" ToRole="siparisTable" />
+        </EntityType>
+        <EntityType Name="bayiurunlerTable">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="bayiid" Type="Int32" Nullable="false" />
+          <Property Name="liftid" Type="Int32" Nullable="false" />
+          <Property Name="stok" Type="Int32" Nullable="false" />
+          <Property Name="fiyat" Type="Double" Nullable="false" />
+          <NavigationProperty Name="bayisatisTable" Relationship="Self.FK_bayisatisTable_bayiurunlerTable" FromRole="bayiurunlerTable" ToRole="bayisatisTable" />
+          <NavigationProperty Name="bayiTable" Relationship="Self.FK_bayiurunlerTable_bayiTable" FromRole="bayiurunlerTable" ToRole="bayiTable" />
+          <NavigationProperty Name="liftTable" Relationship="Self.FK_bayiurunlerTable_liftTable" FromRole="bayiurunlerTable" ToRole="liftTable" />
+        </EntityType>
+        <EntityType Name="depoTable">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="stok" Type="Int32" Nullable="false" />
+          <Property Name="teminsuresi" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="receteTable" Relationship="Self.FK_receteTable_depoTable" FromRole="depoTable" ToRole="receteTable" />
+        </EntityType>
+        <EntityType Name="durumTable">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="durum" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="siparisTable" Relationship="Self.FK_siparisTable_durumTable" FromRole="durumTable" ToRole="siparisTable" />
+        </EntityType>
+        <EntityType Name="liftTable">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="modelid" Type="Int32" Nullable="false" />
+          <Property Name="adet" Type="Int32" Nullable="false" />
+          <Property Name="fiyat" Type="Double" Nullable="false" />
+          <Property Name="bakimperiyot" Type="Int32" Nullable="false" />
+          <Property Name="resim" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="bayiurunlerTable" Relationship="Self.FK_bayiurunlerTable_liftTable" FromRole="liftTable" ToRole="bayiurunlerTable" />
+          <NavigationProperty Name="modelTable" Relationship="Self.FK_liftTable_modelTable" FromRole="liftTable" ToRole="modelTable" />
+          <NavigationProperty Name="siparisTable" Relationship="Self.FK_siparisTable_liftTable" FromRole="liftTable" ToRole="siparisTable" />
+        </EntityType>
+        <EntityType Name="modelTable">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ebat" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="liftTable" Relationship="Self.FK_liftTable_modelTable" FromRole="modelTable" ToRole="liftTable" />
+          <NavigationProperty Name="receteTable" Relationship="Self.FK_receteTable_modelTable" FromRole="modelTable" ToRole="receteTable" />
+        </EntityType>
+        <EntityType Name="musteriTable">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="soyad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="telefon" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="adres" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="bayisatisTable" Relationship="Self.FK_bayisatisTable_musteriTable" FromRole="musteriTable" ToRole="bayisatisTable" />
+        </EntityType>
+        <EntityType Name="odemeyontemiTable">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="tip" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="siparisTable" Relationship="Self.FK_siparisTable_odemeyontemiTable" FromRole="odemeyontemiTable" ToRole="siparisTable" />
+        </EntityType>
+        <EntityType Name="receteTable">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="modelid" Type="Int32" Nullable="false" />
+          <Property Name="depoid" Type="Int32" Nullable="false" />
+          <Property Name="kullanimmiktari" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="depoTable" Relationship="Self.FK_receteTable_depoTable" FromRole="receteTable" ToRole="depoTable" />
+          <NavigationProperty Name="modelTable" Relationship="Self.FK_receteTable_modelTable" FromRole="receteTable" ToRole="modelTable" />
+        </EntityType>
+        <EntityType Name="siparisTable">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="bayiid" Type="Int32" Nullable="false" />
+          <Property Name="liftid" Type="Int32" Nullable="false" />
+          <Property Name="durumid" Type="Int32" Nullable="false" />
+          <Property Name="tarih" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="adet" Type="Double" Nullable="false" />
+          <Property Name="odemeyontemiid" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="bayiTable" Relationship="Self.FK_siparisTable_bayiTable" FromRole="siparisTable" ToRole="bayiTable" />
+          <NavigationProperty Name="durumTable" Relationship="Self.FK_siparisTable_durumTable" FromRole="siparisTable" ToRole="durumTable" />
+          <NavigationProperty Name="liftTable" Relationship="Self.FK_siparisTable_liftTable" FromRole="siparisTable" ToRole="liftTable" />
+          <NavigationProperty Name="odemeyontemiTable" Relationship="Self.FK_siparisTable_odemeyontemiTable" FromRole="siparisTable" ToRole="odemeyontemiTable" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="yoneticiTable">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="soyad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="sifre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_bayisatisTable_bayiTable">
+          <End Role="bayiTable" Type="Self.bayiTable" Multiplicity="1" />
+          <End Role="bayisatisTable" Type="Self.bayisatisTable" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="bayiTable">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="bayisatisTable">
+              <PropertyRef Name="bayiid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_bayisatisTable_bayiurunlerTable">
+          <End Role="bayiurunlerTable" Type="Self.bayiurunlerTable" Multiplicity="1" />
+          <End Role="bayisatisTable" Type="Self.bayisatisTable" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="bayiurunlerTable">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="bayisatisTable">
+              <PropertyRef Name="bayiurunleriid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_bayisatisTable_musteriTable">
+          <End Role="musteriTable" Type="Self.musteriTable" Multiplicity="1" />
+          <End Role="bayisatisTable" Type="Self.bayisatisTable" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="musteriTable">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="bayisatisTable">
+              <PropertyRef Name="musteriid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_bayiurunlerTable_bayiTable">
+          <End Role="bayiTable" Type="Self.bayiTable" Multiplicity="1" />
+          <End Role="bayiurunlerTable" Type="Self.bayiurunlerTable" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="bayiTable">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="bayiurunlerTable">
+              <PropertyRef Name="bayiid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_siparisTable_bayiTable">
+          <End Role="bayiTable" Type="Self.bayiTable" Multiplicity="1" />
+          <End Role="siparisTable" Type="Self.siparisTable" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="bayiTable">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="siparisTable">
+              <PropertyRef Name="bayiid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_bayiurunlerTable_liftTable">
+          <End Role="liftTable" Type="Self.liftTable" Multiplicity="1" />
+          <End Role="bayiurunlerTable" Type="Self.bayiurunlerTable" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="liftTable">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="bayiurunlerTable">
+              <PropertyRef Name="liftid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_receteTable_depoTable">
+          <End Role="depoTable" Type="Self.depoTable" Multiplicity="1" />
+          <End Role="receteTable" Type="Self.receteTable" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="depoTable">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="receteTable">
+              <PropertyRef Name="depoid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_siparisTable_durumTable">
+          <End Role="durumTable" Type="Self.durumTable" Multiplicity="1" />
+          <End Role="siparisTable" Type="Self.siparisTable" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="durumTable">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="siparisTable">
+              <PropertyRef Name="durumid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_liftTable_modelTable">
+          <End Role="modelTable" Type="Self.modelTable" Multiplicity="1" />
+          <End Role="liftTable" Type="Self.liftTable" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="modelTable">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="liftTable">
+              <PropertyRef Name="modelid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_siparisTable_liftTable">
+          <End Role="liftTable" Type="Self.liftTable" Multiplicity="1" />
+          <End Role="siparisTable" Type="Self.siparisTable" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="liftTable">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="siparisTable">
+              <PropertyRef Name="liftid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_receteTable_modelTable">
+          <End Role="modelTable" Type="Self.modelTable" Multiplicity="1" />
+          <End Role="receteTable" Type="Self.receteTable" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="modelTable">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="receteTable">
+              <PropertyRef Name="modelid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_siparisTable_odemeyontemiTable">
+          <End Role="odemeyontemiTable" Type="Self.odemeyontemiTable" Multiplicity="1" />
+          <End Role="siparisTable" Type="Self.siparisTable" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="odemeyontemiTable">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="siparisTable">
+              <PropertyRef Name="odemeyontemiid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="LiftSepetiEntities4" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="bayisatisTable" EntityType="Self.bayisatisTable" />
+          <EntitySet Name="bayiTable" EntityType="Self.bayiTable" />
+          <EntitySet Name="bayiurunlerTable" EntityType="Self.bayiurunlerTable" />
+          <EntitySet Name="depoTable" EntityType="Self.depoTable" />
+          <EntitySet Name="durumTable" EntityType="Self.durumTable" />
+          <EntitySet Name="liftTable" EntityType="Self.liftTable" />
+          <EntitySet Name="modelTable" EntityType="Self.modelTable" />
+          <EntitySet Name="musteriTable" EntityType="Self.musteriTable" />
+          <EntitySet Name="odemeyontemiTable" EntityType="Self.odemeyontemiTable" />
+          <EntitySet Name="receteTable" EntityType="Self.receteTable" />
+          <EntitySet Name="siparisTable" EntityType="Self.siparisTable" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+          <EntitySet Name="yoneticiTable" EntityType="Self.yoneticiTable" />
+          <AssociationSet Name="FK_bayisatisTable_bayiTable" Association="Self.FK_bayisatisTable_bayiTable">
+            <End Role="bayiTable" EntitySet="bayiTable" />
+            <End Role="bayisatisTable" EntitySet="bayisatisTable" />
+          </AssociationSet>
+          <AssociationSet Name="FK_bayisatisTable_bayiurunlerTable" Association="Self.FK_bayisatisTable_bayiurunlerTable">
+            <End Role="bayiurunlerTable" EntitySet="bayiurunlerTable" />
+            <End Role="bayisatisTable" EntitySet="bayisatisTable" />
+          </AssociationSet>
+          <AssociationSet Name="FK_bayisatisTable_musteriTable" Association="Self.FK_bayisatisTable_musteriTable">
+            <End Role="musteriTable" EntitySet="musteriTable" />
+            <End Role="bayisatisTable" EntitySet="bayisatisTable" />
+          </AssociationSet>
+          <AssociationSet Name="FK_bayiurunlerTable_bayiTable" Association="Self.FK_bayiurunlerTable_bayiTable">
+            <End Role="bayiTable" EntitySet="bayiTable" />
+            <End Role="bayiurunlerTable" EntitySet="bayiurunlerTable" />
+          </AssociationSet>
+          <AssociationSet Name="FK_siparisTable_bayiTable" Association="Self.FK_siparisTable_bayiTable">
+            <End Role="bayiTable" EntitySet="bayiTable" />
+            <End Role="siparisTable" EntitySet="siparisTable" />
+          </AssociationSet>
+          <AssociationSet Name="FK_bayiurunlerTable_liftTable" Association="Self.FK_bayiurunlerTable_liftTable">
+            <End Role="liftTable" EntitySet="liftTable" />
+            <End Role="bayiurunlerTable" EntitySet="bayiurunlerTable" />
+          </AssociationSet>
+          <AssociationSet Name="FK_receteTable_depoTable" Association="Self.FK_receteTable_depoTable">
+            <End Role="depoTable" EntitySet="depoTable" />
+            <End Role="receteTable" EntitySet="receteTable" />
+          </AssociationSet>
+          <AssociationSet Name="FK_siparisTable_durumTable" Association="Self.FK_siparisTable_durumTable">
+            <End Role="durumTable" EntitySet="durumTable" />
+            <End Role="siparisTable" EntitySet="siparisTable" />
+          </AssociationSet>
+          <AssociationSet Name="FK_liftTable_modelTable" Association="Self.FK_liftTable_modelTable">
+            <End Role="modelTable" EntitySet="modelTable" />
+            <End Role="liftTable" EntitySet="liftTable" />
+          </AssociationSet>
+          <AssociationSet Name="FK_siparisTable_liftTable" Association="Self.FK_siparisTable_liftTable">
+            <End Role="liftTable" EntitySet="liftTable" />
+            <End Role="siparisTable" EntitySet="siparisTable" />
+          </AssociationSet>
+          <AssociationSet Name="FK_receteTable_modelTable" Association="Self.FK_receteTable_modelTable">
+            <End Role="modelTable" EntitySet="modelTable" />
+            <End Role="receteTable" EntitySet="receteTable" />
+          </AssociationSet>
+          <AssociationSet Name="FK_siparisTable_odemeyontemiTable" Association="Self.FK_siparisTable_odemeyontemiTable">
+            <End Role="odemeyontemiTable" EntitySet="odemeyontemiTable" />
+            <End Role="siparisTable" EntitySet="siparisTable" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="LiftSepetiModelStoreContainer" CdmEntityContainer="LiftSepetiEntities4">
+          <EntitySetMapping Name="bayisatisTable">
+            <EntityTypeMapping TypeName="LiftSepetiModel.bayisatisTable">
+              <MappingFragment StoreEntitySet="bayisatisTable">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="bayiid" ColumnName="bayiid" />
+                <ScalarProperty Name="musteriid" ColumnName="musteriid" />
+                <ScalarProperty Name="bayiurunleriid" ColumnName="bayiurunleriid" />
+                <ScalarProperty Name="tarih" ColumnName="tarih" />
+                <ScalarProperty Name="kar" ColumnName="kar" />
+                <ScalarProperty Name="satisadet" ColumnName="satisadet" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="bayiTable">
+            <EntityTypeMapping TypeName="LiftSepetiModel.bayiTable">
+              <MappingFragment StoreEntitySet="bayiTable">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="ulke" ColumnName="ulke" />
+                <ScalarProperty Name="sehir" ColumnName="sehir" />
+                <ScalarProperty Name="bayiad" ColumnName="bayiad" />
+                <ScalarProperty Name="sifre" ColumnName="sifre" />
+                <ScalarProperty Name="adres" ColumnName="adres" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="bayiurunlerTable">
+            <EntityTypeMapping TypeName="LiftSepetiModel.bayiurunlerTable">
+              <MappingFragment StoreEntitySet="bayiurunlerTable">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="bayiid" ColumnName="bayiid" />
+                <ScalarProperty Name="liftid" ColumnName="liftid" />
+                <ScalarProperty Name="stok" ColumnName="stok" />
+                <ScalarProperty Name="fiyat" ColumnName="fiyat" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="depoTable">
+            <EntityTypeMapping TypeName="LiftSepetiModel.depoTable">
+              <MappingFragment StoreEntitySet="depoTable">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="ad" ColumnName="ad" />
+                <ScalarProperty Name="stok" ColumnName="stok" />
+                <ScalarProperty Name="teminsuresi" ColumnName="teminsuresi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="durumTable">
+            <EntityTypeMapping TypeName="LiftSepetiModel.durumTable">
+              <MappingFragment StoreEntitySet="durumTable">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="durum" ColumnName="durum" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="liftTable">
+            <EntityTypeMapping TypeName="LiftSepetiModel.liftTable">
+              <MappingFragment StoreEntitySet="liftTable">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="modelid" ColumnName="modelid" />
+                <ScalarProperty Name="adet" ColumnName="adet" />
+                <ScalarProperty Name="fiyat" ColumnName="fiyat" />
+                <ScalarProperty Name="bakimperiyot" ColumnName="bakimperiyot" />
+                <ScalarProperty Name="resim" ColumnName="resim" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="modelTable">
+            <EntityTypeMapping TypeName="LiftSepetiModel.modelTable">
+              <MappingFragment StoreEntitySet="modelTable">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="ad" ColumnName="ad" />
+                <ScalarProperty Name="ebat" ColumnName="ebat" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="musteriTable">
+            <EntityTypeMapping TypeName="LiftSepetiModel.musteriTable">
+              <MappingFragment StoreEntitySet="musteriTable">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="ad" ColumnName="ad" />
+                <ScalarProperty Name="soyad" ColumnName="soyad" />
+                <ScalarProperty Name="telefon" ColumnName="telefon" />
+                <ScalarProperty Name="adres" ColumnName="adres" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="odemeyontemiTable">
+            <EntityTypeMapping TypeName="LiftSepetiModel.odemeyontemiTable">
+              <MappingFragment StoreEntitySet="odemeyontemiTable">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="tip" ColumnName="tip" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="receteTable">
+            <EntityTypeMapping TypeName="LiftSepetiModel.receteTable">
+              <MappingFragment StoreEntitySet="receteTable">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="modelid" ColumnName="modelid" />
+                <ScalarProperty Name="depoid" ColumnName="depoid" />
+                <ScalarProperty Name="kullanimmiktari" ColumnName="kullanimmiktari" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="siparisTable">
+            <EntityTypeMapping TypeName="LiftSepetiModel.siparisTable">
+              <MappingFragment StoreEntitySet="siparisTable">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="bayiid" ColumnName="bayiid" />
+                <ScalarProperty Name="liftid" ColumnName="liftid" />
+                <ScalarProperty Name="durumid" ColumnName="durumid" />
+                <ScalarProperty Name="tarih" ColumnName="tarih" />
+                <ScalarProperty Name="adet" ColumnName="adet" />
+                <ScalarProperty Name="odemeyontemiid" ColumnName="odemeyontemiid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="LiftSepetiModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="yoneticiTable">
+            <EntityTypeMapping TypeName="LiftSepetiModel.yoneticiTable">
+              <MappingFragment StoreEntitySet="yoneticiTable">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="ad" ColumnName="ad" />
+                <ScalarProperty Name="soyad" ColumnName="soyad" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="sifre" ColumnName="sifre" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

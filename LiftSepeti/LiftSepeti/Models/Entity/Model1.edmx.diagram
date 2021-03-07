@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="c475a554c0a845f1ac715c94d7f6f64e" Name="Diagram1">
+        <EntityTypeShape EntityType="LiftSepetiModel.bayisatisTable" Width="1.5" PointX="3" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="LiftSepetiModel.bayiTable" Width="1.5" PointX="0.75" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="LiftSepetiModel.bayiurunlerTable" Width="1.5" PointX="6" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="LiftSepetiModel.depoTable" Width="1.5" PointX="1.5" PointY="22.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="LiftSepetiModel.durumTable" Width="1.5" PointX="0.75" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LiftSepetiModel.liftTable" Width="1.5" PointX="0.75" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="LiftSepetiModel.modelTable" Width="1.5" PointX="1.5" PointY="13.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="LiftSepetiModel.musteriTable" Width="1.5" PointX="0.75" PointY="19.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="LiftSepetiModel.odemeyontemiTable" Width="1.5" PointX="0.75" PointY="16.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="LiftSepetiModel.receteTable" Width="1.5" PointX="3.75" PointY="13.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="LiftSepetiModel.siparisTable" Width="1.5" PointX="3" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="LiftSepetiModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LiftSepetiModel.yoneticiTable" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="LiftSepetiModel.FK_bayisatisTable_bayiTable" ManuallyRouted="false" />
+        <AssociationConnector Association="LiftSepetiModel.FK_bayisatisTable_bayiurunlerTable" ManuallyRouted="false" />
+        <AssociationConnector Association="LiftSepetiModel.FK_bayisatisTable_musteriTable" ManuallyRouted="false" />
+        <AssociationConnector Association="LiftSepetiModel.FK_bayiurunlerTable_bayiTable" ManuallyRouted="false" />
+        <AssociationConnector Association="LiftSepetiModel.FK_siparisTable_bayiTable" ManuallyRouted="false" />
+        <AssociationConnector Association="LiftSepetiModel.FK_bayiurunlerTable_liftTable" ManuallyRouted="false" />
+        <AssociationConnector Association="LiftSepetiModel.FK_receteTable_depoTable" ManuallyRouted="false" />
+        <AssociationConnector Association="LiftSepetiModel.FK_siparisTable_durumTable" ManuallyRouted="false" />
+        <AssociationConnector Association="LiftSepetiModel.FK_liftTable_modelTable" ManuallyRouted="false" />
+        <AssociationConnector Association="LiftSepetiModel.FK_siparisTable_liftTable" ManuallyRouted="false" />
+        <AssociationConnector Association="LiftSepetiModel.FK_receteTable_modelTable" ManuallyRouted="false" />
+        <AssociationConnector Association="LiftSepetiModel.FK_siparisTable_odemeyontemiTable" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

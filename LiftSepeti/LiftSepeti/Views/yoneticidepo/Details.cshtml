@@ -1,0 +1,97 @@
+﻿@model LiftSepeti.Models.Entity.depoTable
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Depo İçeriği</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+        h4 {
+            text-align: center;
+        }
+    </style>
+</head>
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark ">
+    <a class="navbar-brand" href="#">Lift Sepeti</a>
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <a class="nav-link" href="/yoneticianasayfa">Ana Sayfa</a>
+        </li>
+        <div>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle 	" href="/yoneticiliftler/Index" id="navbardrop" data-toggle="dropdown">
+                    Liftler
+                </a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="/yoneticiliftler/Index">Liftleri Görüntüle</a>
+                    <a class="dropdown-item" href="/yoneticiliftler/Create">Lift Modeli Ekle</a>
+                </div>
+            </li>
+        </div>
+        <li class="nav-item">
+            <a class="nav-link" href="/yoneticibayiler/Index">Bayiler</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/yoneticisiparisler/Index">Siparişler</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/yoneticidepo/Index">Depo</a>
+        </li>
+        <div>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle 	" href="#" id="navbardrop" data-toggle="dropdown">
+                    Yönetici
+                </a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="/login/Index">Oturumu Kapat</a>
+                </div>
+            </li>
+        </div>
+    </ul>
+</nav>
+<body>
+    <div>
+        <h4>Depo İçeriği</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.ad)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.ad)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.stok)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.stok)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.teminsuresi)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.teminsuresi)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        <a href="/yoneticidepo/Edit/@Model.id" class="btn btn-warning">Düzenle</a>|
+        <a href="/yoneticidepo/Index" class="btn btn-info">Listeye Geri Dön</a>
+    </p>
+</body>
+</html>
